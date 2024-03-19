@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics in School - Components</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product img {
+            max-width: 100%; 
+            height: 100px; 
+        }
+
+        .product:nth-child(2) img {
+            max-width: 50%; 
+        }
+    </style>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            max-width: 100%; /* Change to 100% */
+            padding: 20px;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .navbar .logo {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .menu ul li a {
+            color: #f0f0f0; /* Change link color to match background */
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .search {
+            margin-left: auto; /* Move search to the right */
+        }
+
+        .search input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            background-color: #454545; /* Change input background color to white */
+        }
+
+        .search button {
+            padding: 8px 16px;
+            background-color: #454545; /* Change button background color to match navbar */
+            color: #fff; /* Change button text color to white */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .content h1 {
+            color: #333;
+        }
+
+        .content .par {
+            color: #666;
+        }
+
+        .product {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product h3 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .product p {
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Tech Haven</h2>
+            </div>
+
+            <div class="menu">
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="benefits.html">Benfits</a></li>
+                    <li><a href="challenges.html">Challenges</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                  
+                </ul>
+            </div>
+            
+            <div class="search">
+                <input class="srch" name="" placeholder="Type To Search">
+                <button class="btn" onclick="search()">Search</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Electronics in School - Components</h1>
+            <p class="par">Technology and electronics are tools, systems, and material created or customised for performing out certain tasks. These involve a wide range of items, ranging from basic electronics like laptops and cellphones to complex devices like satellites and supercomputers. Many aspects of modern life, such as communication, transportation, healthcare, entertainment, and education, depend heavily on electronic devices and technology.  They are still changing quickly, causing development and influencing how people interact, work, and live in society.</p>
+        </div>
+    </div>
+
+    <script>
+        function search() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.querySelector('.srch');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("menu");
+            li = ul.getElementsByTagName('li');
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
